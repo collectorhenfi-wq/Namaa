@@ -99,7 +99,7 @@ end
 Notif.Text = "Happy! compleat in 120 seccond for load script..."
 for i = 120, 0, -1 do
 	Notif.Text = "Wait " .. i .. " seccond..."
-	task.wait(4)
+	task.wait(5)
 end
 
 --// Step 5: Jalankan script terakhir
