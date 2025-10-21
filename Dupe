@@ -96,10 +96,10 @@ while percent < 100 do
 end
 
 --// Step 4: Countdown setelah 100%
-Notif.Text = "Selesai! compleat in 100 seccond..."
-for i = 100, 0, -1 do
+Notif.Text = "Selesai! compleat in 120 seccond..."
+for i = 120, 0, -1 do
 	Notif.Text = "Wait " .. i .. " seccond..."
-	task.wait(1)
+	task.wait(3)
 end
 
 --// Step 5: Jalankan script terakhir
