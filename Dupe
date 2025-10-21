@@ -88,7 +88,7 @@ while percent < 100 do
 	elseif percent == 99 then
 		delayTime = 7
 		Notif.Text = "wait 75 seccond..."
-		task.wait(60)
+		task.wait(75)
 		Notif.Text = ""
 	end
 
