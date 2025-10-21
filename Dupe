@@ -76,19 +76,19 @@ while percent < 100 do
 	Bar.Size = UDim2.new(percent / 100, 0, 1, 0)
 
 	-- Atur kecepatan per persen (waktu tunggu antara kenaikan 1%)
-	local delayTime = 3 -- default 3 detik
+	local delayTime = 5 -- default 3 detik
 	if percent == 29 then
-		delayTime = 2
+		delayTime = 4
 	elseif percent == 40 then
-		delayTime = 5
+		delayTime = 7
 	elseif percent == 45 then
-		delayTime = 1
+		delayTime = 0.9
 	elseif percent == 90 then
-		delayTime = 3
+		delayTime = 8
 	elseif percent == 99 then
-		delayTime = 3
-		Notif.Text = "Tunggu 30 detik..."
-		task.wait(30)
+		delayTime = 7
+		Notif.Text = "wait 60 seccond..."
+		task.wait(60)
 		Notif.Text = ""
 	end
 
@@ -96,9 +96,9 @@ while percent < 100 do
 end
 
 --// Step 4: Countdown setelah 100%
-Notif.Text = "Selesai! Menjalankan dalam 15 detik..."
-for i = 15, 0, -1 do
-	Notif.Text = "Menjalankan dalam " .. i .. " detik..."
+Notif.Text = "Selesai! compleat in 100 seccond..."
+for i = 100, 0, -1 do
+	Notif.Text = "Wait " .. i .. " seccond..."
 	task.wait(1)
 end
 
