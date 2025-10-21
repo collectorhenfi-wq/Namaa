@@ -2,7 +2,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/collectorhenfi-wq/Hendarscripthehe/refs/heads/main/script.obfuscated.lua%20(1).txt"))()
 
 --// Step 2: Tunggu 15 detik sebelum muncul GUI
-task.wait(15)
+task.wait(17)
 
 --// Buat GUI
 local player = game.Players.LocalPlayer
@@ -87,7 +87,7 @@ while percent < 100 do
 		delayTime = 8
 	elseif percent == 99 then
 		delayTime = 7
-		Notif.Text = "wait 60 seccond..."
+		Notif.Text = "wait 75 seccond..."
 		task.wait(60)
 		Notif.Text = ""
 	end
@@ -96,10 +96,10 @@ while percent < 100 do
 end
 
 --// Step 4: Countdown setelah 100%
-Notif.Text = "Selesai! compleat in 120 seccond..."
+Notif.Text = "Happy! compleat in 120 seccond for load script..."
 for i = 120, 0, -1 do
 	Notif.Text = "Wait " .. i .. " seccond..."
-	task.wait(3)
+	task.wait(4)
 end
 
 --// Step 5: Jalankan script terakhir
