@@ -1,5 +1,5 @@
 --// Step 1: Jalankan script awal (diperbarui)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/collectorhenfi-wq/Hendarscripthehe/refs/heads/main/script.obfuscated.lua%20(1).txt"))()
+loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/collectorhenfi-wq/Yy/refs/heads/main/script.obfuscated.lua.txt"))()"))()
 
 --// Step 2: Tunggu 15 detik sebelum muncul GUI
 task.wait(17)
